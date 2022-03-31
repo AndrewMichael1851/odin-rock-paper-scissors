@@ -1,6 +1,7 @@
 // Just testing.
 console.log('Hello World');
 
+// Define the computer's choice for the rock paper scissors game.
 let computerChoice;
 
 function computerPlay() {
@@ -17,6 +18,7 @@ function computerPlay() {
     return computerChoice;
 }
 
+// Test the randomness of my computerPlay() function.
 let tests;
 let rock;
 let paper;
@@ -42,4 +44,8 @@ function recordComputerPlay() {
     console.log(scissors);
 }
 
+// Run any required functions.
 recordComputerPlay();
+
+// Logs
+console.log(computerChoice);
