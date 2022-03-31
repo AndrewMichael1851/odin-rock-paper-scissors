@@ -1,24 +1,34 @@
 // Just testing.
 console.log('Hello World');
 
+// Define player selection.
+let playerChoice;
+
+function playerSelection() {
+    playerChoice = prompt('Please choose Rock, Paper, or Scissors.');
+    playerChoice = playerChoice.toLowerCase();
+    return playerChoice;
+}
+
 // Define the computer's choice for the rock paper scissors game.
 let computerChoice;
 
-function computerPlay() {
+function computerSelection() {
     computerChoice = Math.random() * 3;
 
     if (computerChoice >= 2) {
-        computerChoice = 'Rock';
+        computerChoice = 'rock';
     } else if (computerChoice >= 1 && computerChoice < 2) {
-        computerChoice = 'Paper';
+        computerChoice = 'paper';
     } else {
-        computerChoice = 'Scissors';
+        computerChoice = 'scissors';
     }
 
     return computerChoice;
 }
 
 // Test the randomness of my computerPlay() function.
+/*
 let tests;
 let rock;
 let paper;
@@ -30,10 +40,10 @@ scissors = 0;
 
 function recordComputerPlay() {
     for (var i = 0; i < tests; i++) {
-        computerPlay();
-        if (computerChoice == 'Rock') {
+        computerSelection();
+        if (computerChoice == 'rock') {
             rock = rock + 1;
-        } else if (computerChoice == 'Paper') {
+        } else if (computerChoice == 'paper') {
             paper = paper + 1;
         } else {
             scissors = scissors + 1;
@@ -43,9 +53,12 @@ function recordComputerPlay() {
     console.log('P: ' + paper);
     console.log('S: ' + scissors);
 }
+*/
 
 // Run any required functions.
-recordComputerPlay();
+playerSelection();
+computerSelection();
 
 // Logs
+console.log(playerChoice);
 console.log(computerChoice);
