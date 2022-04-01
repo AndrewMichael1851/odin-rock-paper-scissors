@@ -1,5 +1,3 @@
-// Just testing.
-console.log('Hello World');
 
 // Define player selection.
 let playerChoice;
@@ -7,6 +5,14 @@ let playerChoice;
 function playerSelection() {
     playerChoice = prompt('Please choose Rock, Paper, or Scissors.');
     playerChoice = playerChoice.toLowerCase();
+
+    if (playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors') {
+        console.log('playerChoice valid')
+    } else {
+        playerChoice = 'ERROR';
+        alert('Please input a valid choice.');
+    }
+
     return playerChoice;
 }
 
@@ -55,10 +61,42 @@ function recordComputerPlay() {
 }
 */
 
+// Play a round of rock paper scissors.
+function playRound(playerChoice, computerChoice) {
+    if (playerChoice === 'rock') {
+        if (computerChoice === 'paper') {
+            console.log('You lose!');
+        } else if (computerChoice === 'scissors') {
+            console.log('You win!');
+        } else {
+            console.log('ERROR');
+        }
+    } else if (playerChoice === 'paper') {
+        if (computerChoice === 'scissors') {
+            console.log('You lose!');
+        } else if (computerChoice === 'rock') {
+            console.log('You win!');
+        } else {
+            console.log('ERROR');
+        }
+    } else if (playerChoice === 'scissors') {
+        if (computerChoice === 'rock') {
+            console.log('You lose!');
+        } else if (computerChoice === 'paper') {
+            console.log('You win!');
+        } else {
+            console.log('ERROR');
+        }
+    } else {
+        console.log('Computer wins by default.')
+    }
+}
+
 // Run any required functions.
 playerSelection();
 computerSelection();
+playRound(playerChoice, computerChoice);
 
 // Logs
-console.log(playerChoice);
-console.log(computerChoice);
+console.log('You chose ' + playerChoice + '.');
+console.log('Computer chose ' + computerChoice + '.');
