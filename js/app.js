@@ -33,34 +33,6 @@ function computerSelection() {
     return computerChoice;
 }
 
-// Test the randomness of my computerPlay() function.
-/*
-let tests;
-let rock;
-let paper;
-let scissors;
-tests = 1000000;
-rock = 0;
-paper = 0;
-scissors = 0;
-
-function recordComputerPlay() {
-    for (var i = 0; i < tests; i++) {
-        computerSelection();
-        if (computerChoice == 'rock') {
-            rock = rock + 1;
-        } else if (computerChoice == 'paper') {
-            paper = paper + 1;
-        } else {
-            scissors = scissors + 1;
-        }
-    }
-    console.log('R: ' + rock);
-    console.log('P: ' + paper);
-    console.log('S: ' + scissors);
-}
-*/
-
 // Play a round of rock paper scissors.
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === 'rock') {
