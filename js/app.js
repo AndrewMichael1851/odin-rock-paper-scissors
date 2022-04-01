@@ -68,6 +68,8 @@ function playRound(playerChoice, computerChoice) {
             console.log('You lose!');
         } else if (computerChoice === 'scissors') {
             console.log('You win!');
+        } else if (computerChoice === 'rock') {
+            console.log('You tie!');
         } else {
             console.log('ERROR');
         }
@@ -76,6 +78,8 @@ function playRound(playerChoice, computerChoice) {
             console.log('You lose!');
         } else if (computerChoice === 'rock') {
             console.log('You win!');
+        } else if (computerChoice === 'paper') {
+            console.log('You tie!');
         } else {
             console.log('ERROR');
         }
@@ -84,6 +88,8 @@ function playRound(playerChoice, computerChoice) {
             console.log('You lose!');
         } else if (computerChoice === 'paper') {
             console.log('You win!');
+        } else if (computerChoice === 'scissors') {
+            console.log('You tie!');
         } else {
             console.log('ERROR');
         }
@@ -92,11 +98,25 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-// Run any required functions.
-playerSelection();
-computerSelection();
-playRound(playerChoice, computerChoice);
+// Run multiple games.
+let gameNum;
+gameNum = 3;
 
-// Logs
-console.log('You chose ' + playerChoice + '.');
-console.log('Computer chose ' + computerChoice + '.');
+function games(gameNum) {
+    // Divider
+    console.log('<---------- ***** ---------->');
+
+    // Run the games.
+    for (var i = 0; i < gameNum; i++) {
+        playerSelection();
+        computerSelection();
+        playRound(playerChoice, computerChoice);
+
+        // Logs
+        console.log('You chose ' + playerChoice + '.');
+        console.log('Computer chose ' + computerChoice + '.');
+    }
+}
+
+// Run required functions.
+games(gameNum);
