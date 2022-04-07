@@ -8,15 +8,21 @@
         <meta name="description" content="A basic rock, paper, scissors game I made for practice.">
         <link rel="shortcut icon" type="image/png" href="./img/andrew-favicon.png"/>
         <link rel="stylesheet" href="./css/style.css">
-        <script type="text/javascript" src="./js/app.js"></script>
     </head>
     <body>
         <div class="main">
             <div class="card">
                 <img src="./img/andrew-favicon.png" alt="Andrew's logo." class="home-logo">
                 <h1>Odin | Rock Paper Scissors</h1>
-                <p>Please check the console to play Rock Paper Scissors!</p>
+                <div id="score-card"></div>
+                <p>Please choose an option to play Rock Paper Scissors!</p>
+                <div class="options">
+                    <button type="button" id="rock" class="button">Rock</button>
+                    <button type="button" id="paper" class="button">Paper</button>
+                    <button type="button" id="scissors" class="button">Scissors</button>
+                </div>
             </div>
         </div>
+        <script type="text/javascript" src="./js/app.js"></script>
     </body>
 </html>

@@ -1,25 +1,21 @@
-
-// Define player selection.
+// Player selection function.
 let playerChoice;
-
-function playerSelection() {
-    playerChoice = prompt('Please choose Rock, Paper, or Scissors.');
-    playerChoice = playerChoice.toLowerCase();
-
-    if (playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors') {
-        console.log('playerChoice valid')
-    } else {
-        playerChoice = 'ERROR';
-        alert('Please input a valid choice.');
-    }
-
-    return playerChoice;
-}
-
-// Define the computer's choice for the rock paper scissors game.
 let computerChoice;
+let game = 0;
+let playerScore = 0;
+let computerScore = 0;
+let gameResult = '';
 
-function computerSelection() {
+function playGame(e) {
+    // New console.
+    game = game + 1;
+    console.log(`<---------- Game: ${game} ---------->`);
+
+    // Define player choice.
+    playerChoice = e.target.getAttribute('id');
+    console.log('Player: ' + playerChoice);
+
+    // Define computer choice.
     computerChoice = Math.random() * 3;
 
     if (computerChoice >= 2) {
@@ -29,66 +25,61 @@ function computerSelection() {
     } else {
         computerChoice = 'scissors';
     }
+    console.log('Computer: ' + computerChoice);
 
-    return computerChoice;
-}
-
-// Play a round of rock paper scissors.
-function playRound(playerChoice, computerChoice) {
+    // Play rock paper scissors.
     if (playerChoice === 'rock') {
         if (computerChoice === 'paper') {
-            console.log('You lose!');
+            computerScore = computerScore + 1;
+            gameResult = 'You lose!';
         } else if (computerChoice === 'scissors') {
-            console.log('You win!');
+            playerScore = playerScore + 1;
+            gameResult = 'You win!';
         } else if (computerChoice === 'rock') {
-            console.log('You tie!');
+            gameResult = 'You tie!';
         } else {
             console.log('ERROR');
         }
     } else if (playerChoice === 'paper') {
         if (computerChoice === 'scissors') {
-            console.log('You lose!');
+            computerScore = computerScore + 1;
+            gameResult = 'You lose!';
         } else if (computerChoice === 'rock') {
-            console.log('You win!');
+            playerScore = playerScore + 1;
+            gameResult = 'You win!';
         } else if (computerChoice === 'paper') {
-            console.log('You tie!');
+            gameResult = 'You tie!';
         } else {
             console.log('ERROR');
         }
     } else if (playerChoice === 'scissors') {
         if (computerChoice === 'rock') {
-            console.log('You lose!');
+            computerScore = computerScore + 1;
+            gameResult = 'You lose!';
         } else if (computerChoice === 'paper') {
-            console.log('You win!');
+            playerScore = playerScore + 1;
+            gameResult = 'You win!';
         } else if (computerChoice === 'scissors') {
-            console.log('You tie!');
+            gameResult = 'You tie!';
         } else {
             console.log('ERROR');
         }
     } else {
         console.log('Computer wins by default.')
     }
+
+    // Display the result and score.
+    let html = `
+        <h4>Score: ${playerScore} - ${computerScore}</h4>
+        <p>${gameResult}</p>
+        `;
+    document.getElementById('score-card').innerHTML = html;
+
+    //  Logs.
+    console.log(gameResult);
+    console.log(`Score: ${playerScore} - ${computerScore}`);
 }
 
-// Run multiple games.
-let gameNum;
-gameNum = 3;
-
-function games(gameNum) {
-    // Divider
-    console.log('<---------- ***** ---------->');
-
-    // Run the games.
-    for (var i = 0; i < gameNum; i++) {
-        playerSelection();
-        computerSelection();
-        playRound(playerChoice, computerChoice);
-
-        // Logs
-        console.log('You chose ' + playerChoice + '.');
-        console.log('Computer chose ' + computerChoice + '.');
-    }
-}
-
-// Run required functions.
-games(gameNum);
+// Add event listener for button clicks.
+const button = document.querySelectorAll('.button');
+button.forEach(button => button.addEventListener('click', playGame));

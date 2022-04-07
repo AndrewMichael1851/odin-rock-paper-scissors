@@ -20,6 +20,14 @@ body {
     text-align: center;
 }
 
+.options {
+    display: flex;
+    flex 1;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
 .home-logo {
     width: 80vw;
     max-width: 300px;
