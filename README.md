@@ -1,7 +1,9 @@
 # odin-rock-paper-scissors
+
 A project for TOP where I make a basic rock, paper, scissors game in Javascript.
 
 ## Introduction
+
 This is a repo for the "Project: Rock Paper Scissors" lesson in The Odin Project:
 
 - https://www.theodinproject.com/lessons/foundations-rock-paper-scissors
@@ -11,6 +13,7 @@ This is a repo for the "Project: Rock Paper Scissors" lesson in The Odin Project
 We’re going to make a simple implementation of grade-school classic “rock paper scissors”. For the moment we’re just going to play the game from the browser console, but we will revisit this project in a later lesson and add a Graphical User Interface with buttons and text, so don’t forget to keep the code on GitHub!
 
 ## Todo
+
 1. N/A
 
 ## Assignment 1.
@@ -45,7 +48,9 @@ We’re going to make a simple implementation of grade-school classic “rock pa
 4. Make sure to publish the project on GitHub Pages and add a live preview link in the project lesson.
 
 ## Skills Utilized
+
 This project primarily uses basic Javascript skills such as functions and loops. I will also practice git basics such as branches and merging.
 
 ## Reflections
-N/A
+
+I had a lot of fun with this project. The biggest hurdle I had was a small mistake on my part where I left my JS script at the top of my index.html file so it wouldn't run properly, but moving the script to the bottom fixed that quickly. After that it was smooth sailing the rest of the way. Looking forward to more projects like this that challenge my Javascript knowledge.
