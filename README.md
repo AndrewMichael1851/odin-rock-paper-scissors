@@ -54,3 +54,6 @@ This project primarily uses basic Javascript skills such as functions and loops.
 ## Reflections
 
 I had a lot of fun with this project. The biggest hurdle I had was a small mistake on my part where I left my JS script at the top of my index.html file so it wouldn't run properly, but moving the script to the bottom fixed that quickly. After that it was smooth sailing the rest of the way. Looking forward to more projects like this that challenge my Javascript knowledge.
+
+## View Project
+https://andrewmichael1851.github.io/odin-rock-paper-scissors/
